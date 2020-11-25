@@ -12,15 +12,30 @@ from rest_framework.authtoken.views import obtain_auth_token
 {%- endif %}
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    ),
+    # You can add custom 'home' and 'about' pages here
+    # If they are not added, then the default dcodex home page is used
+    # path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    # path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
+    
     # Django Admin, use {% raw %}{% url 'admin:index' %}{% endraw %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("{{ cookiecutter.project_slug }}.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
+    # DCodex apps
+    path("{{cookiecutter.dcodex_url_prefix}}", include("dcodex.urls")),
+    {%- if cookiecutter.use_dcodex_bible == 'y' %}
+    path("{{cookiecutter.dcodex_url_prefix}}", include("dcodex_bible.urls")),
+    {%- endif %}
+    {%- if cookiecutter.use_dcodex_lectionary == 'y' %}
+    path("{{cookiecutter.dcodex_url_prefix}}", include("dcodex_lectionary.urls")),
+    {%- endif %}
+    {%- if cookiecutter.use_dcodex_collation == 'y' %}
+    path("{{cookiecutter.dcodex_url_prefix}}", include("dcodex_collation.urls")),
+    {%- endif %}
+    {%- if cookiecutter.use_dcodex_variants == 'y' %}
+    path("{{cookiecutter.dcodex_url_prefix}}", include("dcodex_variants.urls")),
+    {%- endif %}
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 {%- if cookiecutter.use_async == 'y' %}

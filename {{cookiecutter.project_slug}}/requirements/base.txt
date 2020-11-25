@@ -30,11 +30,12 @@ wsproto==0.15.0  # https://github.com/python-hyper/wsproto/
 
 # Django
 # ------------------------------------------------------------------------------
-django==3.0.11  # pyup: < 3.1  # https://www.djangoproject.com/
+django==3.1.3  # pyup: < 3.1  # https://www.djangoproject.com/ # django==3.0.11  # pyup: < 3.1  # https://www.djangoproject.com/
 django-environ==0.4.5  # https://github.com/joke2k/django-environ
 django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
 django-allauth==0.43.0  # https://github.com/pennersr/django-allauth
 django-crispy-forms==1.9.2  # https://github.com/django-crispy-forms/django-crispy-forms
+django-admin-sortable2==0.7.7  # https://github.com/jrief/django-admin-sortable2
 {%- if cookiecutter.use_compressor == "y" %}
 django-compressor==2.4  # https://github.com/django-compressor/django-compressor
 {%- endif %}
@@ -44,3 +45,24 @@ django-redis==4.12.1  # https://github.com/jazzband/django-redis
 djangorestframework==3.12.2  # https://github.com/encode/django-rest-framework
 django-cors-headers==3.5.0 # https://github.com/adamchainz/django-cors-headers
 {%- endif %}
+
+
+# DCodex
+# ------------------------------------------------------------------------------
+-e git+https://github.com/rbturnbull/gotoh.git#egg=gotoh
+-e git+https://github.com/rbturnbull/dcodex.git#egg=dcodex
+-e git+https://gitlab.unimelb.edu.au/rturnbull/django-imagedeck.git#egg=imagedeck
+
+{%- if cookiecutter.use_dcodex_bible == "y" %}
+-e git+https://github.com/rbturnbull/dcodex_bible.git#egg=dcodex_bible
+{%- endif %}
+{%- if cookiecutter.use_dcodex_lectionary == "y" %}
+-e git+https://github.com/rbturnbull/dcodex_lectionary.git#egg=dcodex_lectionary
+{%- endif %}
+{%- if cookiecutter.use_dcodex_collation == "y" %}
+-e git+https://github.com/rbturnbull/dcodex_collation.git#egg=dcodex_collation
+{%- endif %}
+{%- if cookiecutter.use_dcodex_variants == "y" %}
+-e git+https://github.com/rbturnbull/dcodex_variants.git#egg=dcodex_variants
+{%- endif %}
+

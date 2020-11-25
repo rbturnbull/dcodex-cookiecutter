@@ -8,8 +8,10 @@ class StaticRootS3Boto3Storage(S3Boto3Storage):
 
 
 class MediaRootS3Boto3Storage(S3Boto3Storage):
-    location = "media"
+    location = "dcodexmedia"
+    default_acl = 'private'
     file_overwrite = False
+    custom_domain = False
 {%- elif cookiecutter.cloud_provider == 'GCP' -%}
 from storages.backends.gcloud import GoogleCloudStorage
 
@@ -20,6 +22,8 @@ class StaticRootGoogleCloudStorage(GoogleCloudStorage):
 
 
 class MediaRootGoogleCloudStorage(GoogleCloudStorage):
-    location = "media"
+    location = "dcodexmedia"
+    default_acl = 'private'
     file_overwrite = False
+    custom_domain = False
 {%- endif %}

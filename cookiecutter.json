@@ -1,22 +1,22 @@
 {
-  "project_name": "My Awesome Project",
+  "project_name": "My DCodex Project",
   "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
-  "description": "Behold My Awesome Project!",
-  "author_name": "Daniel Roy Greenfeld",
+  "description": "A brief description my DCodex project.",
+  "author_name": "Robert Turnbull",
   "domain_name": "example.com",
-  "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
+  "email": "{{ cookiecutter.author_name.lower()|replace(' ', '.') }}@dcodex.net",
   "version": "0.1.0",
   "open_source_license": [
+    "Apache Software License 2.0",
     "MIT",
     "BSD",
     "GPLv3",
-    "Apache Software License 2.0",
     "Not open source"
   ],
-  "timezone": "UTC",
+  "timezone": "Australia/Melbourne",
   "windows": "n",
   "use_pycharm": "n",
-  "use_docker": "n",
+  "use_docker": "y",
   "postgresql_version": [
     "12.3",
     "11.8",
@@ -34,6 +34,7 @@
     "None"
   ],
   "mail_service": [
+    "Other SMTP",
     "Mailgun",
     "Amazon SES",
     "Mailjet",
@@ -41,17 +42,16 @@
     "Postmark",
     "Sendgrid",
     "SendinBlue",
-    "SparkPost",
-    "Other SMTP"
+    "SparkPost"
   ],
   "use_async": "n",
-  "use_drf": "n",
+  "use_drf": "y",
   "custom_bootstrap_compilation": "n",
-  "use_compressor": "n",
-  "use_celery": "n",
+  "use_compressor": "y",
+  "use_celery": "y",
   "use_mailhog": "n",
   "use_sentry": "n",
-  "use_whitenoise": "n",
+  "use_whitenoise": "y",
   "use_heroku": "n",
   "ci_tool": [
     "None",
@@ -60,5 +60,10 @@
     "Github"
   ],
   "keep_local_envs_in_vcs": "y",
-  "debug": "n"
+  "debug": "n",
+  "dcodex_url_prefix": "",
+  "use_dcodex_bible": "n",
+  "use_dcodex_lectionary": "n",
+  "use_dcodex_collation": "n",
+  "use_dcodex_variants": "n"
 }

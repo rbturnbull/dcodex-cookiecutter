@@ -1,6 +1,6 @@
 # Contributors
 
-## Core Developers
+## Django Cookiecutter Core Developers
 
 These contributors have commit flags for the repository, and are able to
 accept and merge pull requests.

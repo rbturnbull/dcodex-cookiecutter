@@ -82,10 +82,31 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
 {%- endif %}
+    "django_extensions", # https://django-extensions.readthedocs.io/en/latest/installation_instructions.html#configuration
+    "adminsortable2",
+    'easy_thumbnails',
+    'filer',
+    'mptt',
+    'imagedeck',
+    "{{ cookiecutter.project_slug }}.users.apps.UsersConfig",
+
+    "dcodex",
+{%- if cookiecutter.use_dcodex_bible == "y" %}
+    "dcodex_bible",
+{%- endif %}
+{%- if cookiecutter.use_dcodex_lectionary == "y" %}
+    "dcodex_lectionary",
+{%- endif %}
+{%- if cookiecutter.use_dcodex_collation == "y" %}
+    "dcodex_collation",
+{%- endif %}
+{%- if cookiecutter.use_dcodex_variants == "y" %}
+    "dcodex_variants",
+{%- endif %}
+
 ]
 
 LOCAL_APPS = [
-    "{{ cookiecutter.project_slug }}.users.apps.UsersConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -294,15 +315,16 @@ CELERY_TASK_SOFT_TIME_LIMIT = 60
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 {%- endif %}
+
 # django-allauth
 # ------------------------------------------------------------------------------
-ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
+ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", False) # Not Cookiecutter
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_AUTHENTICATION_METHOD = "username"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = False # Not Cookiecutter
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "none" # Not Cookiecutter
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_ADAPTER = "{{cookiecutter.project_slug}}.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
@@ -330,5 +352,7 @@ REST_FRAMEWORK = {
 CORS_URLS_REGEX = r"^/api/.*$"
 
 {%- endif %}
+
+
 # Your stuff...
 # ------------------------------------------------------------------------------
