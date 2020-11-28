@@ -4,6 +4,8 @@ DCodex Cookiecutter Django
 
 This project can setup a D-Codex site using `Cookiecutter Django`_
 
+.. _Cookiecutter Django: https://cookiecutter-django.readthedocs.io/en/latest/
+
 
 Usage
 ------
@@ -11,6 +13,9 @@ Usage
 First, get Cookiecutter_. ::
 
     $ pip install "cookiecutter>=1.7.0"
+
+.. _cookiecutter: https://github.com/cookiecutter/cookiecutter
+    
 
 Now run it against this repo::
 
@@ -27,7 +32,7 @@ Answer the prompts with your own desired options_. For example::
     description [A brief description my DCodex project.]: A D-Codex project to display the manuscripts of family 13
     author_name [Robert Turnbull]:
     domain_name [example.com]: f13.d-codex.net
-    email [robert.turnbull@dcodex.net]: rob@robturnbull.com
+    email [robert.turnbull@dcodex.net]: 
     version [0.1.0]:
     Select open_source_license:
     1 - Apache Software License 2.0
