@@ -61,7 +61,7 @@
   ],
   "keep_local_envs_in_vcs": "y",
   "debug": "n",
-  "dcodex_url_prefix": "",
+  "dcodex_url_prefix": "dcodex",
   "use_dcodex_bible": "n",
   "use_dcodex_lectionary": "n",
   "use_dcodex_collation": "n",

@@ -11,10 +11,13 @@ from django.views.generic import TemplateView
 from rest_framework.authtoken.views import obtain_auth_token
 {%- endif %}
 
+from dcodex.views import HomeView
+
+
 urlpatterns = [
     # You can add custom 'home' and 'about' pages here
     # If they are not added, then the default dcodex home page is used
-    # path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("", HomeView.as_view(), name="home"),
     # path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
     
     # Django Admin, use {% raw %}{% url 'admin:index' %}{% endraw %}
@@ -22,6 +25,8 @@ urlpatterns = [
     # User management
     path("users/", include("{{ cookiecutter.project_slug }}.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
+    
+    path('filer/', include('filer.urls')),
     # DCodex apps
     path("{{cookiecutter.dcodex_url_prefix}}", include("dcodex.urls")),
     {%- if cookiecutter.use_dcodex_bible == 'y' %}
