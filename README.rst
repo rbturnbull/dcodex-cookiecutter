@@ -23,16 +23,16 @@ Now run it against this repo::
 
 You'll be prompted for some values. Provide them, then a Django project using dcodex will be created for you.
 
-**Warning**: After this point, change 'Daniel Greenfeld', 'pydanny', etc to your own information.
+**Warning**: After this point, change 'Robert Turnbull', 'dcodex_family_13', etc to your own information.
 
 Answer the prompts with your own desired options_. For example::
 
     project_name [My DCodex Project]: DCodex Family 13
     project_slug [dcodex_family_13]: dcodex_f13
     description [A brief description my DCodex project.]: A D-Codex project to display the manuscripts of family 13
-    author_name [Robert Turnbull]:
+    author_name [Robert Turnbull]: Robert Turnbull
     domain_name [example.com]: f13.d-codex.net
-    email [robert.turnbull@dcodex.net]: 
+    email [robert.turnbull@dcodex.net]: rob@robturnbull.com
     version [0.1.0]:
     Select open_source_license:
     1 - Apache Software License 2.0
@@ -99,18 +99,26 @@ Answer the prompts with your own desired options_. For example::
 
 Enter the project and take a look around::
 
-    $ cd reddit/
+    $ cd dcodex_f13/
     $ ls
 
 Create a git repo and push it there::
 
     $ git init
     $ git add .
-    $ git commit -m "first awesome commit"
-    $ git remote add origin git@github.com:pydanny/redditclone.git
+    $ git commit -m "Initial commit for dcodex_f13"
+    $ git remote add origin git@github.com:rbturnbull/dcodex_f13.git
     $ git push -u origin master
 
-Look at the documentation for the dcodex packages you installed to find out more.
+Look at the documentation for the dcodex_ packages you installed to find out more.
+
+.. _dcodex: https://github.com/rbturnbull/dcodex
+
+* https://github.com/rbturnbull/dcodex
+* https://github.com/rbturnbull/dcodex_bible
+* https://github.com/rbturnbull/dcodex_lectionary
+* https://github.com/rbturnbull/dcodex_collation
+* https://github.com/rbturnbull/dcodex_variants
 
 For local development, see the following:
 
