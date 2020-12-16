@@ -1,4 +1,4 @@
-DCodex Cookiecutter Django
+D-Codex Cookiecutter 
 ===========================
 
 

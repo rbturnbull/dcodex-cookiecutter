@@ -8,6 +8,8 @@ RUN apt-get update \
   && apt-get install -y build-essential \
   # psycopg2 dependencies
   && apt-get install -y libpq-dev \
+  # install git so that packages can be install directly from repositories
+  && apt-get install -y git \
   # Translations dependencies
   && apt-get install -y gettext \
   # cleaning up unused files
