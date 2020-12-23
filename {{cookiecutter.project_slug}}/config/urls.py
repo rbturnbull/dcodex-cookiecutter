@@ -17,7 +17,7 @@ from dcodex.views import HomeView
 urlpatterns = [
     # You can add custom 'home' and 'about' pages here
     # If they are not added, then the default dcodex home page is used
-    path("", HomeView.as_view(), name="home"),
+    path("", HomeView.as_view(template_name="home_logo.html"), name="home"),
     # path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
     
     # Django Admin, use {% raw %}{% url 'admin:index' %}{% endraw %}
