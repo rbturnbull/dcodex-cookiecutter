@@ -53,7 +53,7 @@ easy-thumbnails==2.7.1
 # ------------------------------------------------------------------------------
 -e git+https://github.com/rbturnbull/gotoh.git#egg=gotoh
 -e git+https://github.com/rbturnbull/dcodex.git#egg=dcodex
--e git+https://gitlab.unimelb.edu.au/rturnbull/django-imagedeck.git#egg=imagedeck
+-e git+https://gitlab.unimelb.edu.au/rturnbull/django-imagedeck.git#egg=django-imagedeck
 
 {%- if cookiecutter.use_dcodex_bible == "y" %}
 -e git+https://github.com/rbturnbull/dcodex_bible.git#egg=dcodex_bible

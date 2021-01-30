@@ -12,7 +12,7 @@ Usage
 
 First, get Cookiecutter_. ::
 
-    $ pip install "cookiecutter>=1.7.0"
+    $ pip install cookiecutter
 
 .. _cookiecutter: https://github.com/cookiecutter/cookiecutter
     
