@@ -54,6 +54,27 @@ http:
       tls:
         # https://docs.traefik.io/master/routing/routers/#certresolver
         certResolver: letsencrypt
+
+    {%- if cookiecutter.cloud_provider == "MinIO" %}
+    
+    minio-router:
+      rule: "Host(`media.{{ cookiecutter.domain_name }}`)"
+      entryPoints:
+        - web
+      middlewares:
+        - redirect
+      service: minio
+
+    minio-secure-router:
+      rule: "Host(`media.{{ cookiecutter.domain_name }}`)"
+      entryPoints:
+        - web-secure
+      service: minio
+      tls:
+        # https://docs.traefik.io/master/routing/routers/#certresolver
+        certResolver: letsencrypt
+    {%- endif %}
+
     {%- if cookiecutter.use_celery == 'y' %}
 
     flower-secure-router:
@@ -90,6 +111,14 @@ http:
         servers:
           - url: http://flower:5555
     {%- endif %}
+
+    {%- if cookiecutter.cloud_provider == "MinIO" %}
+    minio:
+      loadBalancer:
+        servers:
+          - url: http://minio:9000
+    {%- endif %}
+    
 
 providers:
   # https://docs.traefik.io/master/providers/file/

@@ -192,6 +192,17 @@ def set_django_secret_key(file_path):
     return django_secret_key
 
 
+def set_minio_secret_key(file_path):
+    minio_secret_key = set_flag(
+        file_path,
+        "!!!SET MINIO_SECRET_KEY!!!",
+        length=32,
+        using_digits=True,
+        using_ascii_letters=True,
+    )
+    return minio_secret_key
+
+
 def set_django_admin_url(file_path):
     django_admin_url = set_flag(
         file_path,

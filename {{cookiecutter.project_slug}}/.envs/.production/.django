@@ -39,6 +39,17 @@ SPARKPOST_API_KEY=
 DJANGO_AWS_ACCESS_KEY_ID=
 DJANGO_AWS_SECRET_ACCESS_KEY=
 DJANGO_AWS_STORAGE_BUCKET_NAME=
+{% elif cookiecutter.cloud_provider == 'MinIO' %}
+# MinIO
+# ------------------------------------------------------------------------------
+MINIO_ROOT_USER={{ cookiecutter.project_slug }}
+MINIO_ROOT_PASSWORD=!!!SET MINIO_SECRET_KEY!!!
+MINIO_ACCESS_KEY=$MINIO_ROOT_USER
+MINIO_SECRET_KEY=$MINIO_ROOT_PASSWORD
+DJANGO_AWS_ACCESS_KEY_ID=$MINIO_ACCESS_KEY
+DJANGO_AWS_SECRET_ACCESS_KEY=$MINIO_SECRET_KEY
+DJANGO_AWS_STORAGE_BUCKET_NAME=media
+DJANGO_AWS_S3_ENDPOINT_URL=https://media.{{ cookiecutter.domain_name }}
 {% elif cookiecutter.cloud_provider == 'GCP' %}
 # GCP
 # ------------------------------------------------------------------------------

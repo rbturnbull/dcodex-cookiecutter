@@ -29,6 +29,7 @@
     "Gulp"
   ],
   "cloud_provider": [
+    "MinIO",
     "AWS",
     "GCP",
     "None"

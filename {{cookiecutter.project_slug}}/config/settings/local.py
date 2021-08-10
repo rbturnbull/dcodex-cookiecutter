@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()  # take environment variables from .env.
 from .base import *  # noqa
 from .base import env
 
