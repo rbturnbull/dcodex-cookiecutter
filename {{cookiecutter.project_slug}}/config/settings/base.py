@@ -355,6 +355,7 @@ CORS_URLS_REGEX = r"^/api/.*$"
 
 {%- endif %}
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' # for django 3.2
 
 # Your stuff...
 # ------------------------------------------------------------------------------
