@@ -27,6 +27,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     
     path('filer/', include('filer.urls')),
+    path("imagedeck/", include("imagedeck.urls")),
+
     # DCodex apps
     path("{{cookiecutter.dcodex_url_prefix}}/", include("dcodex.urls")),
     {%- if cookiecutter.use_dcodex_bible == 'y' %}
