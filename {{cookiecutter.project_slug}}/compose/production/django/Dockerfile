@@ -30,9 +30,11 @@ RUN addgroup --system django \
     && adduser --system --ingroup django django
 
 # Requirements are installed here to ensure they will be cached.
-COPY ./requirements /requirements
-RUN pip install --no-cache-dir -r /requirements/production.txt \
-    && rm -rf /requirements
+RUN pip install poetry
+COPY poetry.lock pyproject.toml /requirements/
+WORKDIR /requirements
+RUN poetry config virtualenvs.create false \
+  && poetry install --no-dev --no-interaction --no-ansi  
 
 COPY --chown=django:django ./compose/production/django/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint

@@ -21,7 +21,7 @@ RUN pip install poetry
 COPY poetry.lock pyproject.toml /requirements/
 WORKDIR /requirements
 RUN poetry config virtualenvs.create false \
-  && poetry install --no-dev --no-interaction --no-ansi
+  && poetry install --no-interaction --no-ansi  
 
 COPY ./compose/production/django/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint

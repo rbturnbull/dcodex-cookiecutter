@@ -20,9 +20,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Requirements are installed here to ensure they will be cached.
-COPY ./requirements /requirements
-# All imports needed for autodoc.
-RUN pip install -r /requirements/local.txt -r /requirements/production.txt
+RUN pip install poetry
+COPY poetry.lock pyproject.toml /requirements/
+WORKDIR /requirements
+RUN poetry config virtualenvs.create false \
+  && poetry install --no-interaction --no-ansi  
 
 COPY ./compose/local/docs/start /start-docs
 RUN sed -i 's/\r$//g' /start-docs
