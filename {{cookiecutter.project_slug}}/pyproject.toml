@@ -55,7 +55,7 @@ django-storages = {extras = ["boto3"], version = "^1.12.2"}
 gunicorn = "^20.1.0"
 django-anymail = "^8.4"
 psycopg2 = "^2.9.1"
-scipy = {version = "^1.8.0.dev0", source = "scipy-wheels-nightly"}
+scipy = "^1.7.3"
 
 dcodex = {git = "https://github.com/rbturnbull/dcodex.git"}
 
