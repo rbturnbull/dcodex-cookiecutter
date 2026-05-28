@@ -56,6 +56,7 @@ gunicorn = ">=20.1.0"
 django-anymail = ">=8.4"
 psycopg2 = ">=2.9.1"
 scipy = ">=1.7.3"
+crispy-bootstrap4 = ">=2024.10"
 
 dcodex = {git = "https://github.com/rbturnbull/dcodex.git", branch="dates"}
 
